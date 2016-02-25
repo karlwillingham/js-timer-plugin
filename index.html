@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <script src="timer-plugin.js"></script>
+  <style>
+    .myTimerClass span:nth-of-type(1) {
+      color: green;
+    }
+    .myTimerClass span:nth-of-type(1):after {
+      content: "hr "
+    }
+    .myTimerClass span:nth-of-type(2) {
+      color: red;
+    }
+    .myTimerClass span:nth-of-type(2):after {
+      content: "min "
+    }
+    .myTimerClass span:nth-of-type(3) {
+      color: blue;
+    }
+    .myTimerClass span:nth-of-type(3):after {
+      content: "sec"
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Default Timer -->
+  <h1>Count Up Timer</h1>
+  <div id="timer"></div>
+  <button id="start">start</button>
+  <button id="stop">stop</button>
+  <button id="pause">pause</button>
+
+  <!-- Custom Timer -->
+  <h1>Count Down Timer</h1>
+  <div id="myTimerCustom"></div>
+  <button id="myStart">start</button>
+  <button id="myStop">stop</button>
+  <button id="mPause">pause</button>
+
+
+
+  <script>
+
+    // Standard Default Timer
+    var myTimer = new Timer();
+
+    // Custom Timer Attributes
+    var myTimerCustom = new Timer({
+      countUpStart: 0,
+      countDownStart: 700,
+      countDown: true,
+      showZeros: true,
+      timerId: "myTimerCustom",
+      timerClass: "myTimerClass",
+      startButtonId: "myStart",
+      stopButtonId: "myStop",
+      pauseButtonId: "mPause"
+    });
+  </script>
+</body>
+
+</html>
