@@ -45,6 +45,10 @@
     // build init HTML
     initTimerHTML.call(this);
 
+    // init time object and update html
+    this.timeObject = secondsToHHMMSS(this.secondsCounter);
+    updateTimerHTML.call(this);
+
     // initializeEvents
     initializeEvents.call(this);
   }
