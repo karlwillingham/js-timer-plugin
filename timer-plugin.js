@@ -72,6 +72,10 @@
       this.options.countDownStart : this.options.countUpStart;
     clearInterval(this.secondsInterval);
     this.secondsInterval = null;
+
+    // Update html to Original State
+    this.timeObject = secondsToHHMMSS(this.secondsCounter);
+    updateTimerHTML.call(this);
   }
 
   Timer.prototype.pause = function() {
